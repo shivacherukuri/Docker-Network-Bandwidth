@@ -17,7 +17,7 @@ Managing the container network resources by docker itself would benefit docker S
 
 Example illustration shown in the below diagram:
 
-![Host Bandwidth logo](https://github.com/shivacherukuri/docker/docker-bandwidth/blob/master/docs/static_files/Docker%20Container%20Network%20Bandwidth%20mgmt-v2_026.png "Host Bandwidth")
+![Host Bandwidth logo](https://github.com/shivacherukuri/Docker-Network-Bandwidth/blob/master/docs/static_files/Docker-bwimg-v27pub.png "Host Bandwidth")
 
 
 #New Command usage and sample example
@@ -95,9 +95,9 @@ To set the bandwidth 100 kbps(kilo bits per second) to container #1, use the bel
 
 #Demo
 
-Please view the ![demo video](https://github.com/shivacherukuri/docker/Docker-Network-Bandwidth/blob/master/docker-BW-demo2.mp4)  to see how the new docker network bandwidth feature really works. Also please try more expoeriments and let me know the feedback.
+Please view the ![demo video](https://github.com/shivacherukuri/Docker-Network-Bandwidth/blob/master/demo/docker-BW-demo2.mp4)  to see how the new docker network bandwidth feature really works. Also please try more expoeriments and let me know the feedback.
 
-For the code diff of this new feature you may check this branch:   
+For the code diff of this new feature you can check the branch:   
 <a href="https://github.com/shivacherukuri/docker"> siva-nw-bandwidth branch </a>.
 
 #Feedback
