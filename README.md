@@ -102,9 +102,11 @@ For the code diff of this new feature you can check the branch:
 
 #Feedback
 
-If you have any further queries or feedback please feel free to email <a href="mailto:sivaramaprasad.c@hpe.com">me</a>. Thanks.
+If you have any further queries or feedback please feel free to email <a href="mailto:sivaramaprasad.c@hpe.com">me</a> or
 
-  
-  #Copyright
+ at the proposal #27809 ![27809](https://github.com/docker/docker/issues/27809)
+
+
+#Copyright
 
           (c) Copyright 2016 Hewlett Packard Enterprise Development LP
