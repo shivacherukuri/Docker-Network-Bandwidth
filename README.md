@@ -5,7 +5,7 @@ Effective management of network resources will lead to better utilization of und
 
 #Proposed Solution and use cases
 
-So the proposed Docker Container Network Bandwidth Management solution provides the means to manage docker host networking resourses. It allows the network traffic to be allocated or deallocated based on container id. Also users can prioritize the crucial traffic by limiting the usage of network bandwidth of less important container, so, this could helps making the host network resouces usage  in predictable manner and overall expected containers network throughput behaviour.
+So the proposed Docker Container Network Bandwidth Management solution provides the means to manage Docker host networking resources. It allows the network traffic to be allocated or deallocate based on container id. Also users can prioritize the crucial traffic by limiting the usage of network bandwidth of less important container, so, this could helps making the host network resources usage  in predictable manner and overall expected containers network throughput behavior.
 
 The approach is to set a specific classid in the net_cls cgroup to the docker container and make use of traffic classifier(tc) tool to shape the network traffic of the container based on its classid. This feature make use of the physical network interface card speed and allocation of network bandwidth to the containers beyond actual speed will be restricted. Current implementation works by applying the bandwidth limiting rules using TC(HTB) for both incoming and outgoing traffic by getting the public facing port number of a container(HostPort).
 
@@ -64,7 +64,7 @@ Let's see docker ps command output
 
 Two containers are up and running and to test the bandwidth throttling feature, using iperf tool running inside containers 
 
-Start iperf server inside the two containers
+Start iperf server inside the two container's
 
 container 1 :
 
@@ -85,17 +85,17 @@ Remote client 2 runs:
           $iperf -c "docker container 2 host ip" -d -p 33333 -t 200 -i 10
 
 
-Now you can observe the network throughput output from iperf server in each container terminal. if your host default network physical NIC speed is 10Gig, then you may see two containers sharing the bandwidth around 5gbps each. Suppose if container #2 needs more bandwidth than container #1 then you can apply the new bandwidth rule to container #1 network bandwidth usage.
+Now you can observe the network throughput output from iperf server in each container terminal. If your host default network physical NIC speed is 10Gig, then you may see two containers sharing the bandwidth around 5gbps each. Suppose if container #2 needs more bandwidth than container #1 then you can apply the new bandwidth rule to container #1 network bandwidth usage.
 
 
 To set the bandwidth 100 kbps(kilo bits per second) to container #1, use the below command
 
-          $docker network bw a722daa03c7b -s 100 -t kbps
+          $docker network bandwidth a722daa03c7b -s 100 -t kbps
 
 
 #Demo
 
-Please view the ![demo video](https://github.com/shivacherukuri/Docker-Network-Bandwidth/blob/master/demo/docker-BW-demo2.mp4)  to see how the new docker network bandwidth feature really works. Also please try more expoeriments and let me know the feedback.
+Please view the ![demo video](https://github.com/shivacherukuri/Docker-Network-Bandwidth/blob/master/demo/docker-BW-demo2.mp4)  to see how the new docker network bandwidth feature really works. Also please try more experiments and let me know the feedback.
 
 For the code diff of this new feature you can check the branch:   
 <a href="https://github.com/shivacherukuri/docker"> siva-nw-bandwidth branch </a>.
